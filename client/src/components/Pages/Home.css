@@ -1,0 +1,119 @@
+.home{
+    height:80vh;
+    width:100vw;
+}
+.home_Upperdiv{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home_Lowerdiv{
+    /* margin-top: 60px; */
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.home_Lowerdiv1{
+    margin-top: 60px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.register_Img{
+    margin-left: -200px;
+    margin-right: 200px;
+    height:400px;
+    width:500px;
+}
+.login_Img{
+    margin-left:250px;
+    margin-right: 200px;
+    height:400px;
+    width:500px;
+}
+.login_input > input {
+    height: 45px;
+    width: 250px;
+    border: 0.1rem solid rgba(0, 0, 0, 0.12);
+    outline: none;
+    background-color:#f6f6f6;
+    text-transform: inherit !important;
+    border-radius: 0.5rem !important;
+}
+
+.register_input > input {
+    display: block;
+    height: 40px;
+    width: 140%;
+    margin-bottom: 10px;
+    border: 0.1rem solid rgba(0, 0, 0, 0.12);
+    outline: none;
+    background-color:#f6f6f6;
+    text-transform: inherit !important;
+    border-radius: 0.5rem !important;
+  }
+.button_login{
+    height:40px;
+    width:130px;
+    border-radius:0.5rem; 
+    background-color:green;
+    font-size:13px;
+    font-weight:900;
+    color:white;
+    border:none;
+    outline:none;
+    margin-left:160px
+}
+.button_register{
+    height:40px;
+    width:130px;
+    border-radius:0.5rem; 
+    background-color:green;
+    font-size:13px;
+    font-weight:900;
+    color:white;
+    border:none;
+    outline:none;
+    margin-left:60px
+}
+
+@media screen and (max-width: 960px){
+    .home_Lowerdiv{ 
+        display:block;
+    }
+    .register_Img{
+        margin-left: 10px;
+        margin-right: 0px;
+        width:300px;
+    }
+    .home_Lowerdiv1{
+        display:block;
+    }
+    .login_Img{
+        margin-left:18px;
+        margin-right:0px;
+        height:400px;
+        width:280px;
+    }
+    .register_input > input {
+        width: 70%;
+        margin-left: 45px;
+    }
+    .login_input > input {
+        width: 70%;
+        margin-left: 45px;
+    }
+    .button_login{
+        margin-left:90px;
+        margin-bottom: 5px;
+    }
+    .button_register{
+        margin-left:80px;
+        margin-bottom: 10px;
+    }
+    .login_Img{
+        margin-top:-80px;
+    }
+}
+
