@@ -5,44 +5,57 @@ const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 
 // Load input validation
-const validateRegisterInput = require("../../validation/register");
-const validateLoginInput = require("../../validation/login");
+const { validateLoginInput , validateRegisterInput} = require('../../validation/auth');
 
 // Load User model
 const User = require("../../models/User");
 
 // @route POST api/users/register
 // @desc Register user
-// @access Public
 router.post("/register", (req, res) => {
+
+  //accept form data -- destructuring form data from frontend
+  const { name, email, password } = req.body;
   
   // Form validation
   const { errors, isValid } = validateRegisterInput(req.body);
 
   // Check validation
   if (!isValid) {
-    return res.status(400).json(errors);
+
+    var json_data = errors;
+    var result = [];
+    for(var i in json_data){
+      result.push(json_data [i]);
+    }
+    // console.log(result);
+    return res.status(400).json({
+      error : result[0]
+    });
   }
 
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
-      return res.status(400).json({ email: "Email already exists" });
+      return res.status(400).json({ error: "Email is taken" });
     } else {
-      const newUser = new User({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password
-      });
+      const newUser = new User({ name ,email,password});
 
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
           newUser.password = hash;
-          newUser
-            .save()
-            .then(user => res.json(user))
-            .catch(err => console.log(err));
+          newUser.save((err, result) => {
+            if (err) {
+                return res.status(401).json({
+                    error: 'Error in registration. Try later'
+                });
+            }
+            // console.log('this is final step in user registeration --> newUser will be saved to db',newUser)
+            return res.json({
+                message: `Hello ${name} you have completed registration process. Please login.`
+            });
+        });
         });
       });
     }
@@ -54,22 +67,31 @@ router.post("/register", (req, res) => {
 // @access Public
 router.post("/login", (req, res) => {
 
+  //accept form data -- destructuring form data from frontend
+  const { email, password } = req.body;
+
   // Form validation
   const { errors, isValid } = validateLoginInput(req.body);
 
   // Check validation
   if (!isValid) {
-    return res.status(400).json(errors);
-  }
 
-  const email = req.body.email;
-  const password = req.body.password;
+    var json_data = errors;
+    var result = [];
+    for(var i in json_data){
+      result.push(json_data [i]);
+    }
+    // console.log(result);
+    return res.status(400).json({
+      error : result[0]
+    });
+  }
 
   // Find user by email
   User.findOne({ email }).then(user => {
     // Check if user exists
     if (!user) {
-      return res.status(404).json({ emailnotfound: "Email not found" });
+      return res.status(404).json({ error: "User with this email is not registered" });
     }
 
     // Check password
@@ -77,29 +99,17 @@ router.post("/login", (req, res) => {
       if (isMatch) {
         // User matched
         // Create JWT Payload
-        const payload = {
-          id: user.id,
-          name: user.name
-        };
+        const payload = {id: user.id,name: user.name};
 
         // Sign token
-        jwt.sign(
-          payload,
-          keys.secretOrKey,
-          {
-            expiresIn: 31556926 // 1 year in seconds
-          },
-          (err, token) => {
-            res.json({
-              success: true,
-              token: "Bearer " + token
-            });
+        jwt.sign(payload, keys.secretOrKey, {expiresIn: 31556926 },(err, token) => {
+            res.json({message:"Logged in" , success: true,token: "Bearer " + token});
           }
         );
       } else {
-        return res
-          .status(400)
-          .json({ passwordincorrect: "Password incorrect" });
+        return res.json({
+          error:`Sorry ${user.name} Login error ,Please try again !`
+        });
       }
     });
   });

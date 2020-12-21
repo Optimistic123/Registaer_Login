@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './Home.css'
+import './login.css'
 
 function Login(props) {
 
     const [logindata,setLogindata] = useState({
         email: "",
         password: "",
-        errors: {}
+        success:'',
+        error:''
       });
+    
+    const { email, password ,success, error} = logindata;
 
     function handleChange(event) {
       const { name, value } = event.target;
       
       setLogindata(prevlogidata => {
-          return {
-              ...prevlogidata,
-              [name]:value
-          };
+          return {...prevlogidata, [name]:value, suucess:'', error:''};
       });
-      console.log(logindata);
      }
 
      const submitlogindata = async e => {
@@ -28,36 +27,31 @@ function Login(props) {
         setLogindata({ ...logindata });
 
 
-        try {
-            await axios.post('/api/users/login',logindata);
-            
-            alert('You have successufully loggedin');
-            
-            setLogindata({
-                ...logindata,
-                email: "",
-                password: "",
-            });
-        } catch (error) {
-          alert('email or password is wrong')
-        }
+      try {
+          const response =  await axios.post('http://localhost:5000/api/users/login', {email, password} )
+          setLogindata({...logindata,name: '',email: '',password: '',success:response.data.message});
+         
+      } catch (error) {
+        // console.log(error.response);
+        setLogindata({...logindata, error: error.response.data.error });
+          
+      }
       };
 
 
     return (
       <div className='login'>
-
+        <div className='login_img'>
+            <img className='register_Img' src="images/undraw_team_up_ip2x.svg" alt="image" />
+        </div>
         <form noValidate onSubmit={submitlogindata}>   
-          <div className="login_input">
-            <input style={{marginBottom:'10px',marginRight:'10px'}} onChange={handleChange} name='email' value={logindata.email} placeholder="email" id="email"  type="email" />
-            <input style={{marginBottom:'10px'}} onChange={handleChange} name='password' value={logindata.password} placeholder="Password" id="password" type="password" />
-            <button className='button_login'
-                // style={{ height:'40px',width:'130px',borderRadius:'0.5rem', 
-                //         backgroundColor:'green',fontSize:'13px',fontWeight:'900',color:'white'
-                //         ,border: 'none',outline:'none',marginLeft:'160px'}}
-                type="submit"         
-              >login
-            </button>
+           
+          <div className='login_input'>
+            {success && `${success}`}
+            {error && `${error}`}
+            <input onChange={handleChange} name='email' value={logindata.email} placeholder="email" id="email"  type="email" />
+            <input onChange={handleChange} name='password' value={logindata.password} placeholder="Password" id="password" type="password" />
+            <button className='button_login' type="submit" >login</button>
           </div>  
         </form>
     </div>

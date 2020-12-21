@@ -1,13 +1,16 @@
-.button_login{
-    height:40px;
-    width:130px;
-    border-radius:0.5rem; 
-    background-color:green;
-    font-size:13px;
-    font-weight:900;
-    color:white;
-    border:none;
-    outline:none;
+.register{
+    height:70vh;
+    width:100vw;
+    display: flex;
+}
+.register_img{
+    margin-top: 100px ;
+}
+.register_input{
+    margin-top: 100px ;
+}
+.register_input > input{
+    display:block;
 }
 .button_register{
     height:40px;

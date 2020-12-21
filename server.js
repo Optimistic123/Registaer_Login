@@ -9,11 +9,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Bodyparser middleware
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
+app.use( bodyParser.urlencoded({extended: false}));
 
 app.use(cors());
 app.use(bodyParser.json());
