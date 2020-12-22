@@ -2,13 +2,10 @@ import React from 'react'
 
 function Home() {
   return (
-    <div className='home'>
-       <h1>This is home page</h1>
+    <div>
+      This is home page
     </div>
   )
 }
 
 export default Home
-
-
-

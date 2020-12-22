@@ -1,0 +1,88 @@
+.card {
+  border-radius: 25px;
+  border-style:inset;
+  box-shadow: 5px 4px 5px #ccc;
+  padding: 25px 15px;
+  position: relative;
+  height: 300px;
+  width: 400px;
+  margin: 20px 35px;
+  text-align: left;
+  /* float: left; */
+}
+
+.top {
+  border-radius: 25px 25px 0 0;
+  height: 40%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.bottom {
+  margin-top: 90px;
+}
+
+.card img {
+  margin: 30px 20px 0 0;
+}
+
+.circle-img {
+  border-radius: 50%;
+  border: 7px solid #fff;
+  width: 50px;
+  height: 50px;
+}
+
+.card_info {
+  margin: 20px 0;
+  color: #1a7e76;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2em;
+  color: #2d3436;
+  margin: 20px 0 30px;
+}
+
+.name {
+  font-size: 1.5em;
+  color: #2d3436;
+  display: flex;
+  flex: 1;
+  margin: 10% 20px 0;
+}
+
+.app_students{
+  overflow-x: scroll;
+  cursor: pointer;
+
+}
+.cardstudent_row{
+  display:flex;
+}
+
+/* .app_students::-webkit-scrollbar {
+  display: none;
+} */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height:5px;
+}
+
+.person_details{
+  float:left;
+  background-color: red;
+
+}
+
+.ujjawal{
+  display: flex;
+}
+.bipul{
+  display: flex;
+}

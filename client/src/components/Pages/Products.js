@@ -21,9 +21,7 @@ function Products() {
 
   return (
     <div>
-      {/* {data.map(indData =>{
-        <p>{indData.}</p>
-      })} */}
+      {JSON.stringify(data)}
      <Button onClick={fetchData}>fetchData</Button>
     </div>
   )
