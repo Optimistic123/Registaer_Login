@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './register.css'
+import { Button } from '../Nav/Button';
 
 function Register() {
 
@@ -54,7 +55,7 @@ function Register() {
                   <input onChange={handleChange} name ='email' value={email} type="email" placeholder="email" required />
                   <input onChange={handleChange} name ='password' value={password} type="password" placeholder="Password" required />
                   <input onChange={handleChange} name ='password2' value={password2} type="password" placeholder="Confirm password" required />
-                  <button className='button_register' type="submit" >Register</button>
+                  <Button buttonStyle='btn--outline'>Register</Button>
               </div>  
             </form>
         </div>

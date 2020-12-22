@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './login.css'
+import { Button } from '../Nav/Button';
 
 function Login(props) {
 
@@ -51,7 +52,7 @@ function Login(props) {
             {error && `${error}`}
             <input onChange={handleChange} name='email' value={logindata.email} placeholder="email" id="email"  type="email" />
             <input onChange={handleChange} name='password' value={logindata.password} placeholder="Password" id="password" type="password" />
-            <button className='button_login' type="submit" >login</button>
+            <Button buttonStyle='btn--outline'>Login</Button>
           </div>  
         </form>
     </div>

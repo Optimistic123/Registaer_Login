@@ -3,15 +3,15 @@ import './App.css';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
+import Navbar from './components/Nav/Navbar';
 
 import Home from './components/Pages/Home';
 import Products from './components/Pages/Products';
 import Services from './components/Pages/Services';
 import Aboutus from './components/Pages/Aboutus';
 
-import Register from './components/Pages/Register';
-import Login from './components/Pages/Login';
+import Register from './components/Auth/Register';
+import Login from './components/Auth/Login';
 
 function App() {
   return (

@@ -1,0 +1,16 @@
+.register{
+    height:70vh;
+    width:100vw;
+    display: flex;
+}
+.register_img{
+    margin-top: 100px ;
+}
+.register_input{
+    margin-top: 100px ;
+}
+.register_input > input{
+    display:block;
+}
+
+
