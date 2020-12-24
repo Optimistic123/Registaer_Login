@@ -79,7 +79,7 @@ As of now He manages Around half Crore capital, including Clients & His own fund
             <p style={{color: "black", marginTop: "50px", marginLeft:"20px",fontSize :"20px",alignText:"center"}}>  Bipul being a close friend to Ujjwal had started to show 
               interest since the start of the company. He was The first Investor and 
               advisor in key decision making.
-Since, he is a IT graduate from NIT, PATNA. He had given a considerable contribution in IT & Marketing. 
+Since, he is a IT graduate from NIT, PATNA. He had  a considerable contribution in IT & Marketing. 
 He is also a key advisor in this organisation.</p>
           </div>
       </div>
