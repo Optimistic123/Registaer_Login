@@ -1,0 +1,28 @@
+.detail_text{
+    height: 300px;
+    width: 50vw;
+}
+.detail_text > p 
+{
+    border:4px solid gray;
+    padding:10px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.person_details{
+    float:left;
+    background-color: red;
+  
+  }
+  
+  .ujjawal{
+    display: flex;
+  }
+  .bipul{
+    display: flex;
+  }
+  .manish{
+    display: flex
+  }

@@ -8,6 +8,10 @@
 }
 .register_input{
     margin-top: 100px ;
+    border: 2px solid red;
+    border-radius: 4px;
+    background-color: #3CBC8D;
+  color: white;
 }
 .register_input > input{
     display:block;

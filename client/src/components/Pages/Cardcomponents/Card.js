@@ -16,6 +16,7 @@ function Card(props) {
           <div className="bottom">
             <Detail detailInfo={props.tel} />
             <Detail detailInfo={props.email} />
+            <Detail detailInfo={props.quali}/>
           </div>
 
       </div>
