@@ -12,7 +12,9 @@ import Aboutus from './components/Pages/Aboutus';
 
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
-import Allfaq from './components/Pages/Allfaq'
+import Allfaq from './components/Pages/Allfaq';
+import Footer from './components/Pages/Footer';
+import Terms from './components/Pages/Terms';
 function App() {
   return (
 
@@ -27,7 +29,9 @@ function App() {
           <Route path='/faq' component={Allfaq} />
           <Route path='/register' component={Register} />
           <Route path='/login' component={Login} />
+          <Route path='/termsandcondition' component={Terms} />
         </Switch>
+        <Footer/>
       </Router>
   );
 }

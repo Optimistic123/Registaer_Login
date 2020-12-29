@@ -43,7 +43,7 @@ function Login(props) {
     return (
       <div className='login'>
         <div className='login_img'>
-            <img className='register_Img' src="images/undraw_team_up_ip2x.svg" alt="image" />
+            <img className='register_Img' src="images/undraw_team_up_ip2x.svg" width='80%' height='80%' alt="image" />
         </div>
         <form noValidate onSubmit={submitlogindata}>   
            
