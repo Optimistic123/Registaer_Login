@@ -45,7 +45,7 @@ function Register() {
      return (
         <div className='register'>
             <div className='register_img' >
-              <img src="images/undraw_team_up_ip2x.svg" alt="image" />
+              <img src="/images/undraw_team_up_ip2x.svg" width='80%' height='80%'alt="image" />
             </div>
             <form noValidate onSubmit={submitUser}>   
               <div className='register_input'>

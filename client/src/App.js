@@ -13,6 +13,7 @@ import Aboutus from './components/Pages/Aboutus';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 import Allfaq from './components/Pages/Allfaq'
+import Footer from './components/Pages/Footer'
 function App() {
   return (
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/register' component={Register} />
           <Route path='/login' component={Login} />
         </Switch>
+        <Footer/>
       </Router>
   );
 }

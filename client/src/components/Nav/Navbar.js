@@ -34,7 +34,7 @@ function Navbar() {
         <nav className='navbar'>
           <div className='navbar-container container'>
             
-            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}><img src='./images/brose.ico' style={{color:'black', width:'100%', height:'100%', alt:'images'}} className='navbar-icon' /></Link>
+            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}><img src='./images/brose.svg' style={{color:'black', width:'100px', height:'100px', }} alt='images'></img></Link>
             
             <div className='menu-icon' onClick={handleClick}>
               {click ? <FaTimes style={{color:'black'}}/> : <FaBars style={{color:'black'}}/>}
