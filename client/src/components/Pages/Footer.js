@@ -10,7 +10,6 @@ import {
   FaLinkedin
 } from 'react-icons/fa';
 import { MdFingerprint } from 'react-icons/md';
-
 function Footer() {
   return (
     <div className='footer-container'>
@@ -41,7 +40,7 @@ function Footer() {
             <Link to='/'>Testimonials</Link>
             <Link to='/'>Careers</Link>
             <Link to='/'>Investors</Link>
-            <Link to='/'>Terms of Service</Link>
+            <Link to='/termsandcondition'>Terms of Service</Link>
           </div>
           <div className='footer-link-items'>
             <h2>Contact Us</h2>

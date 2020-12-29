@@ -1,0 +1,15 @@
+.terms__conditions{
+    height:80vh;
+    width:70vw;
+    border:1px solid red;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.trams__para1 > li{
+    margin-left:30px;
+    margin-top: 20px;
+    line-height:1.4;
+    font-size:24px;
+    font-weight:600;
+}
